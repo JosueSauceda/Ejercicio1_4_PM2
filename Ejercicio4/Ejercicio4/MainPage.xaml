@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Convertidor="clr-namespace:Ejercicio4.Converter"
+             x:Class="Ejercicio4.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convertidor:ByteArrayToImage x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <ScrollView>
+
+
+
+            <StackLayout Orientation="Vertical" >
+                <Frame BackgroundColor="Blue" Padding="0" CornerRadius="0">
+                    <Label Text="Ejercicio 4" HorizontalTextAlignment="Center" TextColor="White" FontSize="24"/>
+                </Frame>
+                <Image x:Name="img"  HeightRequest="250" WidthRequest="100" BackgroundColor="Goldenrod" Margin="20,0,20,0" Source="{Binding imagen, Converter={StaticResource ByteToImage}}"/>
+                <Label Text="Nombre" FontAttributes="Bold" FontSize="20" Padding="30,10,30,0"/>
+                <Entry x:Name="txtnombre" Margin="30,0,30,0" FontSize="Subtitle" Text="{Binding nombres}"/>
+                <Label Text="Descripcion" FontAttributes="Bold" FontSize="20" Padding="30,10,30,0"/>
+                <Entry x:Name="txtdescripcion" Margin="30,0,30,0" FontSize="Subtitle" Text="{Binding descripcion}"/>
+
+                <Button Text="Tomar Foto" x:Name="btnFoto" Clicked="btnFoto_Clicked" TextColor="Black" BackgroundColor="Goldenrod" Margin="0,10,30,0" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
+
+                <Button Text="a SQlite" x:Name="btnSQlite" Clicked="btnSQlite_Clicked" TextColor="Black" BackgroundColor="Goldenrod"  Margin="0,10,30,0" WidthRequest="100" HorizontalOptions="Center" />
+            </StackLayout>
+
+
+        </ScrollView>
+
+
+    </StackLayout>
+
+</ContentPage>
